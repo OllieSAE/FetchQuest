@@ -106,6 +106,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     #region Movement
     void Movement()
     {
+        AudioManager am = FindObjectOfType<AudioManager>();
         //for animation, to be added later
         if(horizontalInput != 0)
         {
@@ -119,6 +120,16 @@ public class ImprovedPlayerMovement : MonoBehaviour
         if (grounded)
         {
             rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
+            if (horizontalInput != 0 && !am.IsPlaying("Running"))
+            {
+                am.Play("Running");
+                print("should be playing running sound");
+            }
+            else if (horizontalInput == 0)
+            {
+                am.Stop("Running");
+            }
+            
         }
         else if(!grounded && !isSliding && horizontalInput != 0)
         {

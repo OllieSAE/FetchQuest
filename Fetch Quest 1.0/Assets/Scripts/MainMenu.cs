@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
         print("Quit!");
         Application.Quit();
     }
+
+    public void PlaySound()
+    {
+        FindObjectOfType<AudioManager>().Play("Bark");
+    }
 }

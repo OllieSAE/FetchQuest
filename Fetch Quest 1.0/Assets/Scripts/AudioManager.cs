@@ -54,4 +54,28 @@ public class AudioManager : MonoBehaviour
         
         //FindObjectOfType<AudioManager>().Play("string name goes here")
     }
+    
+    public void Stop(string name)
+    {
+        //searches the "sounds Array", for a sound that is equal to the "name" parameter sent in
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            print("Sound " + " was not found!");
+            return;
+        }
+        s.source.Stop();
+        
+    }
+
+    public bool IsPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            print("Sound " + " was not found!");
+            return false;
+        }
+        return s.source.isPlaying;
+    }
 }
