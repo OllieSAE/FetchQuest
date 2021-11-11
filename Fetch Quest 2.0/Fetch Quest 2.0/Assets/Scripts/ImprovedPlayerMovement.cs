@@ -177,7 +177,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
             //the below section is basically identical to Flip(), except Flip() is locked if you're sliding.
             //since the WallJump can only be activated whilst sliding, I've had to copy the code.
             //if I just call Flip(), you can flip the sprite whilst stuck to the wall which doesn't make sense.
-            
+            animator.Play("Player_Jump");
             facingLeft = !facingLeft;
             if (facingLeft)
             {
@@ -203,6 +203,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         }
         else if ((isSliding || walled) && canJump && downJump)
         {
+            animator.Play("Player_Jump");
             facingLeft = !facingLeft;
             if (facingLeft)
             {
@@ -349,6 +350,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         {
             print("on platform");
             player.transform.parent = other.gameObject.transform;
+            FindObjectOfType<Platform>().StartPlatform();
         }
     }
 
