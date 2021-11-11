@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,12 @@ public class Ball : MonoBehaviour
     private ParticleSystem ps;
     private bool play;
     public GameObject player;
+
+    public Transform target;
+
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
+    private bool chase = false;
 
     void Awake()
     {
@@ -24,6 +31,16 @@ public class Ball : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (chase)
+        {
+            Vector3 desiredPosition = target.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
@@ -34,7 +51,8 @@ public class Ball : MonoBehaviour
                 play = true;
                 FindObjectOfType<AudioManager>().Play("PickUp");
                 ps.Play();
-                GetComponent<Renderer>().enabled = false;
+                //GetComponent<Renderer>().enabled = false;
+                chase = true;
             }
         }
     }

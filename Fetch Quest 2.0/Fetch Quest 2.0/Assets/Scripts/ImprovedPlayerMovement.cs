@@ -62,7 +62,6 @@ public class ImprovedPlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         animator.SetBool("Walled", walled);
         animator.SetBool("Grounded", grounded);
-        print("");
         Inputs();
         CheckWorld();
     }
@@ -233,10 +232,15 @@ public class ImprovedPlayerMovement : MonoBehaviour
         if (walled && !grounded && rb.velocity.y < 0)
         {
             isSliding = true;
+            if (!FindObjectOfType<AudioManager>().IsPlaying("Splat"))
+            {
+                FindObjectOfType<AudioManager>().Play("Splat");
+            }
         }
         else
         {
             isSliding = false;
+            FindObjectOfType<AudioManager>().Stop("Splat");
         }
 
         if (isSliding)
@@ -244,6 +248,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, slidingSpeed);
         }
     }
+    
     #endregion
 
     #region Respawn
