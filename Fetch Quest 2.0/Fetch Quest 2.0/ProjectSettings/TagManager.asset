@@ -11,6 +11,7 @@ TagManager:
   - Owner
   - FallZone
   - Platform
+  - TriggeredPlatform
   layers:
   - Default
   - TransparentFX

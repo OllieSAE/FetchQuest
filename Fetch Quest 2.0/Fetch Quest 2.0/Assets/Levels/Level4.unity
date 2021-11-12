@@ -1587,7 +1587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053818021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.33, y: -12.59, z: 0}
+  m_LocalPosition: {x: -16.1, y: -12.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 738675678}
@@ -1635,7 +1635,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &1053818026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3340,7 +3340,7 @@ GameObject:
   - component: {fileID: 1509994390}
   m_Layer: 8
   m_Name: Platform
-  m_TagString: Platform
+  m_TagString: TriggeredPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3353,7 +3353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509994388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.21, y: 4.88, z: 0}
+  m_LocalPosition: {x: -15.94, y: 4.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 255561278}
@@ -3375,13 +3375,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509994388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86e37368cdbe264f8e554b5248c18eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c3ecd22aeb75aa49b48d12f288d20a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pos1: {fileID: 1646904063}
   pos2: {fileID: 1825951558}
   platformSpeed: 2
-  startPos: {fileID: 1825951558}
+  startPos: {fileID: 1646904063}
   startMoving: 0
 --- !u!61 &1509994391
 BoxCollider2D:
@@ -3420,7 +3420,7 @@ GameObject:
   - component: {fileID: 1552429837}
   m_Layer: 0
   m_Name: MovingPlatform
-  m_TagString: Platform
+  m_TagString: TriggeredPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3947,6 +3947,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Running
     clip: {fileID: 8300000, guid: 49966843acc581b4c9a4c23dff04f6fe, type: 3}
+    volume: 1
+    pitch: 0.85
+    loop: 0
+    source: {fileID: 0}
+  - name: Splat
+    clip: {fileID: 8300000, guid: 9935fff12f8714e4cbf77eb1a9d582f2, type: 3}
     volume: 1
     pitch: 0.85
     loop: 0

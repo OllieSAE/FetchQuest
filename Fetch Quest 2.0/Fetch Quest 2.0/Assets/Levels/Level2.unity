@@ -2245,6 +2245,12 @@ MonoBehaviour:
     pitch: 0.85
     loop: 1
     source: {fileID: 0}
+  - name: Splat
+    clip: {fileID: 8300000, guid: 9935fff12f8714e4cbf77eb1a9d582f2, type: 3}
+    volume: 1
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &1548632996
 Transform:
   m_ObjectHideFlags: 0
@@ -9444,7 +9450,6 @@ MonoBehaviour:
   target: {fileID: 1053818023}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
-  chase: 0
 --- !u!95 &2066900755
 Animator:
   serializedVersion: 3

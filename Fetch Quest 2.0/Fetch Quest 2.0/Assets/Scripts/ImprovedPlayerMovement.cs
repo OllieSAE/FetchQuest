@@ -269,7 +269,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     }
     #endregion
 
-    #region Animation (currently only Flip() is implemented, to flip sprite based on movement direction)  
+    #region Animation (WIP - currently only Flip() is implemented, to flip sprite based on movement direction)  
     //void AnimationControl()
     //{
     //anim.SetBool("isMoving", isMoving);
@@ -277,7 +277,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     //}
 
     
-    //help us Haigen!
+    
     void Flip()
     {
         if (!isSliding)
@@ -353,15 +353,23 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Platform"))
         {
-            print("on platform");
             player.transform.parent = other.gameObject.transform;
-            FindObjectOfType<Platform>().StartPlatform();
+        }
+        if (other.gameObject.CompareTag("TriggeredPlatform"))
+        {
+            player.transform.parent = other.gameObject.transform;
+            FindObjectOfType<TriggeredPlatform>().StartPlatform();
         }
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Platform"))
+        {
+            player.transform.parent = null;
+        }
+
+        if (other.gameObject.CompareTag("TriggeredPlatform"))
         {
             player.transform.parent = null;
         }

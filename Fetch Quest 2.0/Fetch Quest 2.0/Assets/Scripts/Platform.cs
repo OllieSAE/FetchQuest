@@ -8,7 +8,6 @@ public class Platform : MonoBehaviour
     public Transform pos1, pos2;
     public float platformSpeed;
     public Transform startPos;
-    public bool startMoving = false;
 
     private Vector3 nextPos;
     
@@ -31,19 +30,11 @@ public class Platform : MonoBehaviour
             nextPos = pos1.position;
         }
 
-        if (startMoving)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, platformSpeed * Time.deltaTime);
-        }
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, platformSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
-    }
-
-    public void StartPlatform()
-    {
-        startMoving = true;
     }
 }
