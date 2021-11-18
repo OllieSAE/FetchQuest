@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class ImprovedPlayerMovement : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     public bool hasBall = false;
     private Vector2 respawnPoint;
     public GameObject player;
+    private bool resetSound;
     #endregion
 
     #region Basics (awake, update, etc.)
@@ -125,12 +127,12 @@ public class ImprovedPlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
             if (horizontalInput != 0 && !am.IsPlaying("Running"))
             {
-                am.Play("Running");
+                //am.Play("Running");
                 print("should be playing running sound");
             }
             else if (horizontalInput == 0)
             {
-                am.Stop("Running");
+                //am.Stop("Running");
             }
             
         }
@@ -160,6 +162,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if(canJump && grounded)
         {
+            resetSound = false;
             canJump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             print("regular jump");
@@ -172,6 +175,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if ((isSliding||walled) && canJump && !downJump && horizontalInput ==0 && rb.velocity.y <= 0)
         {
+            resetSound = false;
             print("wall jump");
             //the below section is basically identical to Flip(), except Flip() is locked if you're sliding.
             //since the WallJump can only be activated whilst sliding, I've had to copy the code.
@@ -202,6 +206,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         }
         else if ((isSliding || walled) && canJump && downJump)
         {
+            resetSound = false;
             animator.Play("Player_Jump");
             facingLeft = !facingLeft;
             if (facingLeft)
@@ -231,16 +236,14 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if (walled && !grounded && rb.velocity.y < 0)
         {
+            
+            
             isSliding = true;
-            if (!FindObjectOfType<AudioManager>().IsPlaying("Splat"))
-            {
-                FindObjectOfType<AudioManager>().Play("Splat");
-            }
         }
         else
         {
             isSliding = false;
-            FindObjectOfType<AudioManager>().Stop("Splat");
+            //FindObjectOfType<AudioManager>().Stop("Splat");
         }
 
         if (isSliding)
@@ -258,6 +261,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         StartCoroutine("RespawnCoroutine");
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public IEnumerator RespawnCoroutine()
@@ -282,15 +286,21 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if (!isSliding)
         {
+            
+            
+            
             wallJumpDirection *= -1;
             facingLeft = !facingLeft;
             if (facingLeft)
             {
                 transform.localScale = Vector3.one;
+                
+                
             }
             else
             {
                 transform.localScale = new Vector3(-1, 1, 1);
+                
             }
         }
     }
@@ -298,6 +308,24 @@ public class ImprovedPlayerMovement : MonoBehaviour
 
     #region Other
 
+    void SplatSound()
+    {
+        if (!resetSound)
+        {
+            FindObjectOfType<AudioManager>().Play("Splat");
+            resetSound = true;
+        }
+    }
+    void RunningSound()
+    {
+        FindObjectOfType<AudioManager>().Play("Running");
+    }
+
+    void RunningSoundCancel()
+    {
+        FindObjectOfType<AudioManager>().Stop("Running");
+    }
+    
     public IEnumerator JumpDelayCoroutine()
     {
         yield return new WaitForSeconds(0.1f);

@@ -56,4 +56,35 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Bark");
     }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("Levels/Level1");
+        Resume();
+    }
+    
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Levels/Level2");
+        Resume();
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Levels/Level3");
+        Resume();
+    }
+
+    public void LoadLevel4()
+    {
+        SceneManager.LoadScene("Levels/Level4");
+        Resume();
+    }
+
+    public void LoadLevel5()
+    {
+        SceneManager.LoadScene("Levels/Level5");
+        Resume();
+    }
+
 }
