@@ -9670,7 +9670,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Background
-    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
+    clip: {fileID: 8300000, guid: cc15879cd7b799c4983f8e46c4c97054, type: 3}
     volume: 0.46
     pitch: 0.85
     loop: 1
@@ -17416,7 +17416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1053818021}
   target: {fileID: 1053818023}
-  smoothSpeed: 0.125
+  smoothSpeed: 0.075
   offset: {x: 0, y: 0, z: 0}
 --- !u!95 &2066900755
 Animator:

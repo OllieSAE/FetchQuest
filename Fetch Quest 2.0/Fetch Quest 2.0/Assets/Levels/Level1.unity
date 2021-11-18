@@ -537,7 +537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &132103306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &257905470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2645,7 +2645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &608962282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4422,7 +4422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1500066643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12176,7 +12176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1053818021}
   target: {fileID: 1053818023}
-  smoothSpeed: 0.125
+  smoothSpeed: 0.075
   offset: {x: 0, y: 0, z: 0}
 --- !u!95 &2066900755
 Animator:
