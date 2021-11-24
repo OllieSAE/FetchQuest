@@ -86,7 +86,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
         }
-        if (Input.GetKeyDown(KeyCode.Space) && (grounded||walled||isSliding))
+        if ((Input.GetKeyDown(KeyCode.Space)||(Input.GetKeyDown(KeyCode.W))||(Input.GetKeyDown(KeyCode.UpArrow))) && (grounded||walled||isSliding))
         {
             canJump = true;
             StartCoroutine(JumpDelayCoroutine());
@@ -136,6 +136,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
             }
             
         }
+        //airborne movement
         else if(!grounded && !isSliding && horizontalInput != 0)
         {
             rb.AddForce(new Vector2(airMovementSpeed * horizontalInput,0));
@@ -170,10 +171,10 @@ public class ImprovedPlayerMovement : MonoBehaviour
 
         }
     } 
-
+    
     void WallJump()
     {
-        if ((isSliding||walled) && canJump && !downJump && horizontalInput ==0 && rb.velocity.y <= 0)
+        if ((isSliding||walled) && canJump && !downJump && rb.velocity.y <= 0)
         {
             resetSound = false;
             print("wall jump");
@@ -181,6 +182,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
             //since the WallJump can only be activated whilst sliding, I've had to copy the code.
             //if I just call Flip(), you can flip the sprite whilst stuck to the wall which doesn't make sense.
             animator.Play("Player_Jump");
+            
             facingLeft = !facingLeft;
             if (facingLeft)
             {
@@ -194,15 +196,14 @@ public class ImprovedPlayerMovement : MonoBehaviour
 
             inputAllowed = false;
             rb.AddForce(new Vector2(wallJumpPower * wallJumpDirection * wallJumpAngle.x, wallJumpPower * wallJumpAngle.y), ForceMode2D.Impulse);
-            StartCoroutine("WallJumpDelayCoroutine");
             
+            StartCoroutine("WallJumpDelayCoroutine");
+
             FindObjectOfType<AudioManager>().Play("Jump");
             canJump = false;
             //this bit is in a different position to Flip, and must be at the end.
             //if it's BEFORE the force is applied, the direction is incorrect.
             wallJumpDirection *= -1;
-            
-            
         }
         else if ((isSliding || walled) && canJump && downJump)
         {

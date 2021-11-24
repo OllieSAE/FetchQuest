@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Audio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
     public static AudioManager instance;
-        
+
+    private Scene currentScene;
+    
     void Awake()
     {
         //if there is an existing AudioManager instance, then any new ones (created on loading new scene), are destroyed
@@ -36,7 +39,26 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-        Play("Background");
+
+        Play("MainMenuMusic");
+    }
+
+    void Update()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        
+        if ((sceneName != "Main Menu") && (!IsPlaying("Background")))
+        {
+            Stop("MainMenuMusic");
+            Play("Background");
+        }
+
+        if ((sceneName == "Main Menu") && (!IsPlaying("MainMenuMusic")))
+        {
+            Stop("Background");
+            Play("MainMenuMusic");
+        }
     }
 
     public void Play(string name)

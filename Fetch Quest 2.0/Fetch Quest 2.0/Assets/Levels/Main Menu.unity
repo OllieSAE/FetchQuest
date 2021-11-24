@@ -808,6 +808,12 @@ MonoBehaviour:
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &128345206
 Transform:
   m_ObjectHideFlags: 0
@@ -5056,15 +5062,15 @@ MonoBehaviour:
     Move right
     - D or right arrow
 
-    Jump - Space
+    Jump - Space, W or up arrow
 
-    Jump down - Hold S or down arrow and
-    press Space
+    Jump down - Hold S or
+    down arrow and press Space
 
     Pick up ball - Walk over it
 
-    Return ball - Walk over Owner
-    after picking up ball
+    Return ball
+    - Walk over Owner after picking up ball
 
     Escape - Pause game
 
