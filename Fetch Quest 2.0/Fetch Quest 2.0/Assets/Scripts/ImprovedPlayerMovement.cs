@@ -195,6 +195,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
             //this bit is the main part of the function, providing the wall jump
 
             inputAllowed = false;
+            horizontalInput = 0;
             rb.AddForce(new Vector2(wallJumpPower * wallJumpDirection * wallJumpAngle.x, wallJumpPower * wallJumpAngle.y), ForceMode2D.Impulse);
             
             StartCoroutine("WallJumpDelayCoroutine");
@@ -237,8 +238,6 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if (walled && !grounded && rb.velocity.y < 0)
         {
-            
-            
             isSliding = true;
         }
         else

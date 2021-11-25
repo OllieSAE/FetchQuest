@@ -27,7 +27,6 @@ public class Owner : MonoBehaviour
     public void DisableSpeechBubble()
     {
         StartCoroutine("DisableSpeechBubbleCoroutine");
-        
     }
     
     public IEnumerator DisableSpeechBubbleCoroutine()

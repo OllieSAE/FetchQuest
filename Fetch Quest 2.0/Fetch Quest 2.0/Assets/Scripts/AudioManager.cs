@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     private Scene currentScene;
-    
+
     void Awake()
     {
         //if there is an existing AudioManager instance, then any new ones (created on loading new scene), are destroyed
@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            
+            s.source.outputAudioMixerGroup = s.group;
         }
 
         Play("MainMenuMusic");
