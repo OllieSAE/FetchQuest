@@ -48,8 +48,12 @@ public class AudioManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         
+        
+        //important to have the second check, otherwise sound file will repeatedly start and it sounds like a jarring hum
+        
         if ((sceneName != "Main Menu") && (!IsPlaying("Background")))
         {
+            //StartCoroutine(FadeOut("MainMenuMusic", 0.2f));
             Stop("MainMenuMusic");
             Play("Background");
         }
@@ -59,8 +63,33 @@ public class AudioManager : MonoBehaviour
             Stop("Background");
             Play("MainMenuMusic");
         }
+
+        if ((sceneName == "End Menu") && (!IsPlaying("MainMenuMusic")))
+        {
+            Stop("Background");
+            Stop("Running");
+            Play("MainMenuMusic");
+        }
     }
 
+    //public IEnumerator FadeOut(string name, float FadeTime)
+    //{
+        //Sound s = Array.Find(sounds, sound => sound.name == name);
+        //if (s == null)
+        //{
+            //print("Sound " + name + " was not found!");
+        //}
+        //float startVolume = s.volume;
+
+        //while (s.volume > 0)
+        //{
+            //s.volume -= startVolume * Time.deltaTime / FadeTime;
+            //yield return null;
+        //}
+
+        //Stop("MainMenuMusic");
+        //s.volume = startVolume;
+    //}
     public void Play(string name)
     {
         //searches the "sounds Array", for a sound that is equal to the "name" parameter sent in

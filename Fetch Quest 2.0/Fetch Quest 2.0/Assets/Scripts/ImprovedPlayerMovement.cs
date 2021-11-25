@@ -365,6 +365,10 @@ public class ImprovedPlayerMovement : MonoBehaviour
         {
             hasBall = true;
         }
+        else if (collision.tag == "Owner" && !hasBall)
+        {
+            FindObjectOfType<Owner>().EnableSpeechBubble();
+        }
         else if(collision.tag == "Owner" && hasBall == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -375,6 +379,14 @@ public class ImprovedPlayerMovement : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Death");
             Respawn();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Owner" && !hasBall)
+        {
+            FindObjectOfType<Owner>().DisableSpeechBubble();
         }
     }
 
