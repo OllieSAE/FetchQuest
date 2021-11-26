@@ -763,30 +763,42 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: PickUp
     clip: {fileID: 8300000, guid: 27a5c05e1ca32ff47b0f46fb46d0d715, type: 3}
     volume: 0.46
     pitch: 1.15
     loop: 0
     source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: Death
     clip: {fileID: 8300000, guid: 0b8e01219c832ef4799216428eba0351, type: 3}
     volume: 0.46
     pitch: 1.15
     loop: 0
     source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: Background
-    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
+    clip: {fileID: 8300000, guid: cc15879cd7b799c4983f8e46c4c97054, type: 3}
     volume: 0.2
     pitch: 0.85
     loop: 1
     source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: Bark
     clip: {fileID: 8300000, guid: e0f26ff31bb2f5b40bc76f68b99e184b, type: 3}
     volume: 0.595
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
 --- !u!4 &128345206
 Transform:
   m_ObjectHideFlags: 0

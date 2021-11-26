@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         
         //important to have the second check, otherwise sound file will repeatedly start and it sounds like a jarring hum
         
-        if ((sceneName != "Main Menu") && (!IsPlaying("Background")))
+        if ((sceneName != "Main Menu") && (!IsPlaying("Background")) && (sceneName != "End Menu"))
         {
             //StartCoroutine(FadeOut("MainMenuMusic", 0.2f));
             Stop("MainMenuMusic");
