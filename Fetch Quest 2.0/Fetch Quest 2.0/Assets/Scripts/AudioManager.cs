@@ -107,6 +107,17 @@ public class AudioManager : MonoBehaviour
         
         //FindObjectOfType<AudioManager>().Play("string name goes here")
     }
+
+    public void PlayOneShot(AudioClip clip)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            print("Sound " + name +" was not found!");
+            return;
+        }
+        s.source.PlayOneShot(clip, 1f);
+    }
     
     public void Stop(string name)
     {

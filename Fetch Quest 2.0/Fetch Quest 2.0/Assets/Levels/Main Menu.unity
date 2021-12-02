@@ -592,6 +592,8 @@ GameObject:
   - component: {fileID: 115429124}
   - component: {fileID: 115429123}
   - component: {fileID: 115429126}
+  - component: {fileID: 115429127}
+  - component: {fileID: 115429128}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -616,8 +618,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -191}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: 0.000022888, y: -57}
+  m_SizeDelta: {x: 406.9568, y: 101.7392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115429123
 MonoBehaviour:
@@ -762,6 +764,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &115429127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115429121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 128345205}
+--- !u!114 &115429128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115429121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115429127}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &128345204
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +873,7 @@ MonoBehaviour:
     group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
-    volume: 0.595
+    volume: 0
     pitch: 0.85
     loop: 1
     source: {fileID: 0}
@@ -843,6 +887,20 @@ MonoBehaviour:
     group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
   - name: Splat
     clip: {fileID: 8300000, guid: 372dce6a1e343184192f3e44af5165cc, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: ButtonHighlight
+    clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: ATumbleDown
+    clip: {fileID: 8300000, guid: 13f0289821d68df439e54be3c8b0f8a3, type: 3}
     volume: 0.595
     pitch: 0.85
     loop: 1
@@ -1327,7 +1385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d172fd9c044d7549af3ea783b2d1f75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05067a5aed219ca44bd48802cf5067dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2134,8 +2192,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: 345}
-  m_SizeDelta: {x: 533.97876, y: 238.15088}
+  m_AnchoredPosition: {x: -0.0000076294, y: 397}
+  m_SizeDelta: {x: 800, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944546579
 MonoBehaviour:
@@ -2210,7 +2268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ce74540843e3da43bdb1248201beb01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b2ee975979888b439c4273af5e6e083, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2689,7 +2747,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443493146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1913645401}
@@ -2698,7 +2756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -193}
+  m_AnchoredPosition: {x: 0, y: -257}
   m_SizeDelta: {x: 256, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443493148
@@ -2857,6 +2915,8 @@ GameObject:
   - component: {fileID: 1468466808}
   - component: {fileID: 1468466807}
   - component: {fileID: 1468466810}
+  - component: {fileID: 1468466811}
+  - component: {fileID: 1468466812}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -2881,8 +2941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: 192}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: 0, y: 330}
+  m_SizeDelta: {x: 406.9568, y: 101.7392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468466807
 MonoBehaviour:
@@ -3005,6 +3065,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1468466811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468466805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 128345205}
+--- !u!114 &1468466812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468466805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1468466811}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1489398959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +3120,8 @@ GameObject:
   - component: {fileID: 1489398962}
   - component: {fileID: 1489398961}
   - component: {fileID: 1489398964}
+  - component: {fileID: 1489398965}
+  - component: {fileID: 1489398966}
   m_Layer: 5
   m_Name: Controls Button
   m_TagString: Untagged
@@ -3042,8 +3146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 64}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: -0.000030518, y: 198}
+  m_SizeDelta: {x: 406.9568, y: 101.7392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489398961
 MonoBehaviour:
@@ -3188,6 +3292,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1489398965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489398959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 128345205}
+--- !u!114 &1489398966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489398959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1489398965}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1517312470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3347,8 @@ GameObject:
   - component: {fileID: 1517312473}
   - component: {fileID: 1517312472}
   - component: {fileID: 1517312475}
+  - component: {fileID: 1517312476}
+  - component: {fileID: 1517312477}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -3225,8 +3373,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -64}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: 0.0000076294, y: 70}
+  m_SizeDelta: {x: 406.9568, y: 101.7392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517312472
 MonoBehaviour:
@@ -3371,6 +3519,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1517312476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517312470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 128345205}
+--- !u!114 &1517312477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517312470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1517312476}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1518567333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,6 +3688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df96d6be8388464187f74755c384c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playAnimator: {fileID: 1468466810}
+  controlsAnimator: {fileID: 1489398964}
+  settingsAnimator: {fileID: 1517312475}
+  creditsAnimator: {fileID: 115429126}
+  exitAnimator: {fileID: 1635593258}
 --- !u!1 &1530249571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,6 +4086,8 @@ GameObject:
   - component: {fileID: 1635593256}
   - component: {fileID: 1635593255}
   - component: {fileID: 1635593258}
+  - component: {fileID: 1635593259}
+  - component: {fileID: 1635593260}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -3915,8 +4112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -319}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: 0.0000076294, y: -185}
+  m_SizeDelta: {x: 406.9568, y: 101.7392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635593255
 MonoBehaviour:
@@ -4039,6 +4236,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1635593259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635593253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 128345205}
+--- !u!114 &1635593260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635593253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1635593259}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1649440620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5105,8 +5344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19, y: 0.000015258789}
-  m_SizeDelta: {x: -26.593628, y: -258.28772}
+  m_AnchoredPosition: {x: -35, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960237264
 MonoBehaviour:
@@ -5127,17 +5366,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FETCH QUEST CREATED BY
-
-
-    - Chris Rayos
-
-    - Cian Ellerby
-
-    -
-    Ollie Vincent
-
-'
+  m_text: "\n\n\n\n\n\nCoding - Ollie V \r\n\r\nLevel Design - Ollie V, Cian E \r\n\r\nMusic
+    and Sound Design - Chris R. \r\n\r\nSprite and Environment Art - Cian E, Chris
+    R. \r\n\r\nAnimations - Cian E \r\n\r\nMain Menu BGM - \"Lost Moon's Music!\",
+    by Questiion (Freesound.org)\n\nButton Highlight SFX - \"Button Tick\", by NenadSimic
+    (Freesound.org)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5166,8 +5399,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5183,7 +5416,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 53
+  m_firstOverflowCharacterIndex: 148
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -5204,15 +5437,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -32.374756, w: 0}
+  m_margin: {x: 0, y: 0, z: -73.45767, w: 83.80901}
   m_textInfo:
     textComponent: {fileID: 1960237264}
-    characterCount: 69
+    characterCount: 294
     spriteCount: 0
-    spaceCount: 14
-    wordCount: 13
+    spaceCount: 66
+    wordCount: 52
     linkCount: 0
-    lineCount: 5
+    lineCount: 21
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

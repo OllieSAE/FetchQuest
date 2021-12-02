@@ -64,6 +64,11 @@ public class ImprovedPlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         animator.SetBool("Walled", walled);
         animator.SetBool("Grounded", grounded);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Wall"))
+        {
+            print("walled");
+            
+        }
         Inputs();
         CheckWorld();
     }
