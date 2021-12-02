@@ -67,7 +67,6 @@ public class ImprovedPlayerMovement : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Wall"))
         {
             print("walled");
-            
         }
         Inputs();
         CheckWorld();
