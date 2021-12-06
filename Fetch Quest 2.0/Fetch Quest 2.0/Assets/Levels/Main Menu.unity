@@ -5009,6 +5009,7 @@ GameObject:
   - component: {fileID: 1930683523}
   - component: {fileID: 1930683522}
   - component: {fileID: 1930683521}
+  - component: {fileID: 1930683524}
   m_Layer: 5
   m_Name: TitleDog
   m_TagString: Untagged
@@ -5032,7 +5033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: -432}
+  m_AnchoredPosition: {x: -5.3, y: -441}
   m_SizeDelta: {x: 800, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930683521
@@ -5126,6 +5127,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930683519}
   m_CullTransparentMesh: 0
+--- !u!95 &1930683524
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930683519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cacb10f41c5a460ea3de82482af9299, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1933910294
 GameObject:
   m_ObjectHideFlags: 0
