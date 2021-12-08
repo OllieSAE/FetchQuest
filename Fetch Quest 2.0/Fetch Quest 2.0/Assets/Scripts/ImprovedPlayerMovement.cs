@@ -66,7 +66,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         animator.SetBool("Grounded", grounded);
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Wall"))
         {
-            print("walled");
+            //print("walled");
         }
         Inputs();
         CheckWorld();
@@ -290,21 +290,15 @@ public class ImprovedPlayerMovement : MonoBehaviour
     {
         if (!isSliding)
         {
-            
-            
-            
             wallJumpDirection *= -1;
             facingLeft = !facingLeft;
             if (facingLeft)
             {
                 transform.localScale = Vector3.one;
-                
-                
             }
             else
             {
                 transform.localScale = new Vector3(-1, 1, 1);
-                
             }
         }
     }
@@ -312,6 +306,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
 
     #region Other
 
+    //called via animation event in the Player Animator
     void SplatSound()
     {
         if (!resetSound)
@@ -320,11 +315,13 @@ public class ImprovedPlayerMovement : MonoBehaviour
             resetSound = true;
         }
     }
+    //called via animation event in the Player Animator
     void RunningSound()
     {
         FindObjectOfType<AudioManager>().Play("Running");
     }
 
+    //called via animation event in the Player Animator
     void RunningSoundCancel()
     {
         FindObjectOfType<AudioManager>().Stop("Running");
