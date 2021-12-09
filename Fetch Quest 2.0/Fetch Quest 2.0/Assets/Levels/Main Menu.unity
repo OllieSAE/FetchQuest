@@ -5597,7 +5597,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 148
+  m_firstOverflowCharacterIndex: 172
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -5621,10 +5621,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -73.45767, w: 83.80901}
   m_textInfo:
     textComponent: {fileID: 1960237264}
-    characterCount: 294
+    characterCount: 309
     spriteCount: 0
     spaceCount: 66
-    wordCount: 52
+    wordCount: 53
     linkCount: 0
     lineCount: 21
     pageCount: 1
