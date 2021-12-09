@@ -56,21 +56,38 @@ public class AudioManager : MonoBehaviour
         if ((sceneName != "Main Menu") && (!IsPlaying("Background")) && (sceneName != "End Menu"))
         {
             //StartCoroutine(FadeOut("MainMenuMusic", 0.2f));
-            Stop("MainMenuMusic");
-            Play("Background");
+            if ((sceneName == "Level1") || (sceneName == "Level2") || (sceneName == "Level3"))
+            {
+                Stop("MainMenuMusic");
+                Stop("ATumbleDown");
+                Play("Background");
+            }
+            //else
+            //{
+                //Stop("MainMenuMusic");
+                //Play("ATumbleDown");
+            //}
         }
 
         if ((sceneName == "Main Menu") && (!IsPlaying("MainMenuMusic")))
         {
             Stop("Background");
+            Stop("ATumbleDown");
             Play("MainMenuMusic");
         }
 
         if ((sceneName == "End Menu") && (!IsPlaying("MainMenuMusic")))
         {
             Stop("Background");
+            Stop("ATumbleDown");
             Stop("Running");
             Play("MainMenuMusic");
+        }
+
+        if (((sceneName == "Level4") || (sceneName == "Level5")) && (IsPlaying("Background")))
+        {
+            Stop("Background");
+            Play("ATumbleDown");
         }
     }
 

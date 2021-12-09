@@ -290,6 +290,8 @@ GameObject:
   - component: {fileID: 68057772}
   - component: {fileID: 68057771}
   - component: {fileID: 68057770}
+  - component: {fileID: 68057774}
+  - component: {fileID: 68057773}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -441,6 +443,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68057768}
   m_CullTransparentMesh: 0
+--- !u!114 &68057773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68057768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 68057774}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &68057774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68057768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 235743837}
 --- !u!1 &96881686
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +601,8 @@ GameObject:
   - component: {fileID: 115429124}
   - component: {fileID: 115429123}
   - component: {fileID: 115429126}
+  - component: {fileID: 115429128}
+  - component: {fileID: 115429127}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -727,92 +773,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &128345204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 128345206}
-  - component: {fileID: 128345205}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &128345205
+--- !u!114 &115429127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128345204}
+  m_GameObject: {fileID: 115429121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d8e73f26e6b3641b8aca16e176081f, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: Jump
-    clip: {fileID: 8300000, guid: 554c1508a22a8584087e7bf1b2801577, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
-  - name: PickUp
-    clip: {fileID: 8300000, guid: 27a5c05e1ca32ff47b0f46fb46d0d715, type: 3}
-    volume: 0.46
-    pitch: 1.15
-    loop: 0
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
-  - name: Death
-    clip: {fileID: 8300000, guid: 0b8e01219c832ef4799216428eba0351, type: 3}
-    volume: 0.46
-    pitch: 1.15
-    loop: 0
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
-  - name: Background
-    clip: {fileID: 8300000, guid: cc15879cd7b799c4983f8e46c4c97054, type: 3}
-    volume: 0.2
-    pitch: 0.85
-    loop: 1
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
-  - name: Bark
-    clip: {fileID: 8300000, guid: e0f26ff31bb2f5b40bc76f68b99e184b, type: 3}
-    volume: 0.595
-    pitch: 0.85
-    loop: 0
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
-  - name: MainMenuMusic
-    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
-    volume: 0.595
-    pitch: 0.85
-    loop: 0
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
---- !u!4 &128345206
-Transform:
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115429128}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &115429128
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128345204}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 115429121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 235743837}
 --- !u!1 &163959119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1061,127 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &235743836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235743838}
+  - component: {fileID: 235743837}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235743837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235743836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d8e73f26e6b3641b8aca16e176081f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Jump
+    clip: {fileID: 8300000, guid: 554c1508a22a8584087e7bf1b2801577, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 27a5c05e1ca32ff47b0f46fb46d0d715, type: 3}
+    volume: 0.46
+    pitch: 1.15
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: Death
+    clip: {fileID: 8300000, guid: 0b8e01219c832ef4799216428eba0351, type: 3}
+    volume: 0.46
+    pitch: 1.15
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: Background
+    clip: {fileID: 8300000, guid: cc15879cd7b799c4983f8e46c4c97054, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: Bark
+    clip: {fileID: 8300000, guid: e0f26ff31bb2f5b40bc76f68b99e184b, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: efdee6efc022f6e4eb994417ed28f047, type: 3}
+    volume: 0.3
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: Running
+    clip: {fileID: 8300000, guid: 49966843acc581b4c9a4c23dff04f6fe, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: Splat
+    clip: {fileID: 8300000, guid: 372dce6a1e343184192f3e44af5165cc, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: ButtonHighlight
+    clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: ATumbleDown
+    clip: {fileID: 8300000, guid: 13f0289821d68df439e54be3c8b0f8a3, type: 3}
+    volume: 0.595
+    pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+  - name: CompleteSound
+    clip: {fileID: 8300000, guid: 97ae1db8aa5169a47a61cd0b0796143c, type: 3}
+    volume: 0.705
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: fa38a1bbeb5877449925f07c5fc76690, type: 2}
+--- !u!4 &235743838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235743836}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274946098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1577,8 @@ GameObject:
   - component: {fileID: 383277691}
   - component: {fileID: 383277690}
   - component: {fileID: 383277689}
+  - component: {fileID: 383277693}
+  - component: {fileID: 383277692}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -1605,6 +1730,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383277687}
   m_CullTransparentMesh: 0
+--- !u!114 &383277692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383277687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 383277693}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &383277693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383277687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 235743837}
 --- !u!1 &630336005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,6 +3923,8 @@ GameObject:
   - component: {fileID: 1443493149}
   - component: {fileID: 1443493148}
   - component: {fileID: 1443493151}
+  - component: {fileID: 1443493153}
+  - component: {fileID: 1443493152}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -3926,6 +4095,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1443493152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443493146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1443493153}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1443493153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443493146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 235743837}
 --- !u!1 &1518567333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,11 +4262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df96d6be8388464187f74755c384c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playAnimator: {fileID: 0}
-  controlsAnimator: {fileID: 0}
-  settingsAnimator: {fileID: 0}
-  creditsAnimator: {fileID: 0}
-  exitAnimator: {fileID: 0}
 --- !u!1 &1613888608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5235,8 @@ GameObject:
   - component: {fileID: 1635593256}
   - component: {fileID: 1635593255}
   - component: {fileID: 1635593258}
+  - component: {fileID: 1635593260}
+  - component: {fileID: 1635593259}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -5177,6 +5385,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1635593259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635593253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1635593260}
+          m_MethodName: PlayHighlightButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1635593260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635593253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d52faec05659b438a1100a566af152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0e8c78ccf5c90d54fbdc0bdbe94add21, type: 3}
+  audioManager: {fileID: 235743837}
 --- !u!213 &1674397775
 Sprite:
   m_ObjectHideFlags: 0
@@ -5962,7 +6212,8 @@ MonoBehaviour:
     and Sound Design - Chris R. \r\n\r\nSprite and Environment Art - Cian E, Chris
     R. \r\n\r\nAnimations - Cian E \r\n\r\nMain Menu BGM - \"Lost Moon's Music!\",
     by Questiion (Freesound.org)\n\nButton Highlight SFX - \"Button Tick\", by NenadSimic
-    (Freesound.org)\n"
+    (Freesound.org)\n\nLevel Complete SFX - \"Complete/obtained sound\", by Annyew
+    (Freesound.org)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5991,8 +6242,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

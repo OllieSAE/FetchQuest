@@ -371,6 +371,7 @@ public class ImprovedPlayerMovement : MonoBehaviour
         }
         else if(collision.tag == "Owner" && hasBall == true)
         {
+            FindObjectOfType<AudioManager>().Play("CompleteSound");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             hasBall = false;
             respawnPoint = transform.position;

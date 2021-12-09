@@ -15591,8 +15591,8 @@ Tilemap:
   - first: {x: 20, y: 19, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileIndex: 11
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -16977,7 +16977,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 153e34ae1593b7f40981d1bae3906bc9, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 75
+  - m_RefCount: 74
     m_Data: {fileID: 11400000, guid: 78c836f683036414ba3e74f3a17cde4d, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 54216528984832b4fba514015c816d86, type: 2}
@@ -16989,7 +16989,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f41ddff968a3741369f9d50b7390731a, type: 2}
   - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 39a3ae4b2ef51469f99c962e25ce869d, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: ed501f85ae6e24f298405456c76b5886, type: 2}
   - m_RefCount: 294
     m_Data: {fileID: 11400000, guid: da20d6bd3d47045ec9fa6abf41e2ec5e, type: 2}
@@ -17010,13 +17010,13 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: b21be979a28cc2d4c98d2af6ad45fdca, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: 21300000, guid: e1575128e7d854f51b6a7b19d541b6e3, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 21300000, guid: 84483f35b321b4c419f02a5133cdc92d, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 9d2cb218a34bc8644968fa58e6af1b58, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 21300000, guid: c2c2b23db2687499b9562a4cdf22c24e, type: 3}
-  - m_RefCount: 75
+  - m_RefCount: 74
     m_Data: {fileID: 21300000, guid: 9f4d8560131fc5f4d8ea22006282d701, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 21300000, guid: 88c0ee9e8c1be474f94d55d4636790d2, type: 3}
@@ -17507,6 +17507,18 @@ CompositeCollider2D:
       - X: 220000000
         Y: 250000000
       - X: 220000000
+        Y: 200000000
+      - X: 210000100
+        Y: 200000000
+      - X: 210000100
+        Y: 200000041
+      - X: 210000041
+        Y: 200000100
+      - X: 199999959
+        Y: 200000100
+      - X: 199999900
+        Y: 200000041
+      - X: 199999900
         Y: 200000000
       - X: 160000000
         Y: 200000000

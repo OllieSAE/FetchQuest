@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,6 +9,11 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler
 {
     public AudioClip clip;
     public AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
